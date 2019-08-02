@@ -1,0 +1,79 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import "~semantic-ui-css/semantic.min.css";
+
+$color: #262828;
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  color: $color;
+  overflow-x: hidden;
+}
+
+#heading {
+  text-align: center;
+}
+
+.ui.container {
+  max-width: 468px !important;
+  padding: 1rem !important;
+  padding-top: 20px !important;
+  margin: 0 auto !important;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  p {
+    color: #2a63d8;
+  }
+}
+
+.item-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem; 
+  .item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.out-slider {
+  margin-top: 40px;
+  // @media (max-width: 768px) {
+  //   margin-top: 40px;
+  // }
+  @media (max-width: 468px) {
+    margin-top: 40px;
+  }
+
+  @media (max-width: 360px) {
+    margin-top: 25px;
+  }
+}
+
+.comment-box {
+  padding: 1.5rem 1rem;
+}
+
+.buttons-group {
+  width: 100%;  
+}
+
+.ui.inverted.blue.button, .ui.inverted.blue.buttons .button {
+  padding: 20px !important;
+}
+
+.slick-thumb {
+  position: relative;
+  bottom: 0;
+  li {
+    width: 25%;
+    margin: 0;
+  }
+}
