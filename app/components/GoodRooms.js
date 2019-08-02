@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Image, Divider, Button } from 'semantic-ui-react';
 import Slider from 'react-slick';
 import s3 from '../assets/images/s3.png';
@@ -42,55 +42,75 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const GoodRooms = () => {
-  return (
-    <div>
-      <Container>
-        <h3 id="heading">Good Rooms</h3>
-        <div className="header-box">
-          <h4>$148/night</h4>
-          <p>Membership Discount</p>
-        </div>
-        <div>
-          <Slider {...settings}>
-            <div>
-              <Image src={s3} />
-            </div>
-            <div>
-              <Image src={s4} />
-            </div>
-            <div>
-              <Image src={s5} />
-            </div>
-            <div>
-              <Image src={s6} />
-            </div>
-          </Slider>
-        </div>
-        <div className="out-slider">
-          <div className="item-box">
-            <div className="item"><Image src={kingSize} /><span> King Size</span></div>
-            <div className="item"><span>3 People </span><Image src={people} /></div>
-          </div>
-          <Divider fitted />
-          <div className="item-box">
-            <div className="item"><Image src={mountain} /><span> Mountain View</span></div>
-            <div className="item"><span>Free Wifi </span><Image src={wifi} /></div>
-          </div>
-        </div>
-        <div className="comment-box">
-          <h4>
-            Indulge in our 30sqm good rooms.
-            It is the perfect combination of lofty space and modern ambiance.
-          </h4>
-        </div>
-        <Button.Group Fluid className="buttons-group">
-          <Button inverted color="blue">Amenities</Button>
-          <Button inverted color="blue">Booking Details</Button>
-        </Button.Group>
-      </Container>
-    </div>
-  );
-};
+export default class GoodRooms extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isAmentities: false,
+      isBooking: true,
+    };
+  }
 
-export default GoodRooms;
+  handleAmentities () {
+    this.setState({ isAmentities: !this.state.isAmentities });
+    this.setState({ isBooking: this.state.isAmentities });
+  }
+
+  handleBookingDetails () {
+    this.setState({ isBooking: !this.state.isBooking });
+    this.setState({ isAmentities: !this.state.isAmentities });
+  }
+
+  render() {
+    return (
+      <div>
+        <Container>
+          <h3 id="heading">Good Rooms</h3>
+          <div className="header-box">
+            <h4>$148/night</h4>
+            <p>Membership Discount</p>
+          </div>
+          <br />
+          <div>
+            <Slider {...settings}>
+              <div>
+                <Image src={s3} />
+              </div>
+              <div>
+                <Image src={s4} />
+              </div>
+              <div>
+                <Image src={s5} />
+              </div>
+              <div>
+                <Image src={s6} />
+              </div>
+            </Slider>
+          </div>
+          <div className="out-slider">
+            <div className="item-box">
+              <div className="item"><Image src={kingSize} /><span> King Size</span></div>
+              <div className="item"><span>3 People </span><Image src={people} /></div>
+            </div>
+            <Divider fitted />
+            <div className="item-box">
+              <div className="item"><Image src={mountain} /><span> Mountain View</span></div>
+              <div className="item"><span>Free Wifi </span><Image src={wifi} /></div>
+            </div>
+          </div>
+          <div className="comment-box">
+            <h4>
+              Indulge in our 30sqm good rooms.
+              It is the perfect combination of lofty space and modern ambiance.
+            </h4>
+          </div>
+          <Button.Group Fluid className="buttons-group">
+            <Button inverted color="blue" active={this.state.isAmentities} onClick={() => this.handleAmentities} >Amenities</Button>
+            <Button inverted color="blue" active={!this.state.isBooking} onClick={() => this.handleBookingDetails}>Booking Details</Button>
+          </Button.Group>
+        </Container>
+      </div>
+    );
+  }
+}
+
