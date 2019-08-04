@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Image, Divider, Button } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
 import Slider from 'react-slick';
 import s3 from '../assets/images/s3.png';
 import s4 from '../assets/images/s4.png';
@@ -48,6 +49,7 @@ export default class GoodRooms extends Component {
     this.state = {
       isAmentities: false,
       isBooking: true,
+      isRedirect: false,
     };
   }
 
@@ -59,9 +61,14 @@ export default class GoodRooms extends Component {
   handleBookingDetails () {
     this.setState({ isBooking: !this.state.isBooking });
     this.setState({ isAmentities: !this.state.isAmentities });
+    this.setState({ isRedirect: true });
   }
 
   render() {
+    const { isAmentities, isBooking, isRedirect } = this.state;
+    if (isRedirect) {
+      return <Redirect to="/number-rooms" />;
+    }
     return (
       <div>
         <Container>
@@ -105,8 +112,8 @@ export default class GoodRooms extends Component {
             </h4>
           </div>
           <Button.Group Fluid className="buttons-group">
-            <Button inverted color="blue" active={this.state.isAmentities} onClick={() => this.handleAmentities} >Amenities</Button>
-            <Button inverted color="blue" active={!this.state.isBooking} onClick={() => this.handleBookingDetails}>Booking Details</Button>
+            <Button inverted color="blue" active={isAmentities} onClick={() => this.handleAmentities()} >Amenities</Button>
+            <Button inverted color="blue" active={!isBooking} onClick={() => this.handleBookingDetails()}>Booking Details</Button>
           </Button.Group>
         </Container>
       </div>
