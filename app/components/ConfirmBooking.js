@@ -46,6 +46,7 @@ export default class ConfirmBooking extends Component {
       isDecline: false,
       isAccept: true,
       isRedirect: false,
+      isRedirectToRC: false,
     };
   }
 
@@ -58,11 +59,15 @@ export default class ConfirmBooking extends Component {
   handleAccept () {
     this.setState({ isAccept: !this.state.isAccept });
     this.setState({ isDecline: !this.state.isDecline });
+    this.setState({ isRedirectToRC: true });
   }
 
   render() {
     if (this.state.isRedirect) {
       return <Redirect to="/number-rooms" />;
+    }
+    if (this.state.isRedirectToRC) {
+      return <Redirect to="/restaurant-choices" />;
     }
     return (
       <div>

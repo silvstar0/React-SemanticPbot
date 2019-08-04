@@ -158,6 +158,10 @@ hr {
   color: #999999 !important
 }
 
+.no-margin {
+  margin: 0;
+}
+
 .room-details {
   h4 {
     margin: 0;
@@ -168,6 +172,10 @@ hr {
   h4 {
     margin: 0;
   }
+}
+
+.text-center {
+  text-align: center;
 }
 
 .out-slider, .room-type {
@@ -203,6 +211,10 @@ hr {
     border-top-right-radius: 7px !important;
     border-bottom-right-radius: 7px !important;
   }
+
+  &.-starters-buttons {
+    padding: 0 1rem;
+  }
 }
 
 .ui.inverted.blue.button.confirm-booking-btn {
@@ -229,5 +241,115 @@ hr {
   li {
     width: 25%;
     margin: 0;
+  }
+}
+
+.choices {
+  display: flex;
+  .choice-item {
+    border: 1px solid #c3c3c3;
+    width: 50%;
+    padding-bottom: 20px;
+    h5 {
+      color: #999999;
+      font-weight: 500;
+    }    
+    &:hover {
+      cursor: pointer;
+      border-radius: 10px;
+      transform: scale(1.1);
+      background: rgb(39, 113, 224);
+      h5 {
+        color: white !important;
+      }      
+    }
+    img {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    &.-top-left {
+      border-top-left-radius: 10px;
+      border-bottom: none;
+    }
+    &.-top-right {
+      border-top-right-radius: 10px;
+      border-bottom: none;
+    }
+    &.-bottom-left {
+      border-bottom-left-radius: 10px;
+    }
+    &.-bottom-right {
+      border-bottom-right-radius: 10px;
+    }    
+  }
+}
+
+.contact-detail {
+  background: white;
+  padding-bottom: 25px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  .contact-line {
+    display: flex;
+    padding: 0 1rem;
+    img {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.bottom-container {
+  background: linear-gradient( to bottom, #ffffff 80%, #272736 20% );
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.footer-line {
+  img {
+    width: 164px;
+    height: 44px;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 1rem;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.Collapsible__contentInner {
+  padding: 5px 1rem;
+}
+
+.confirm-booking-btn {
+  background-color: #2a63d8;
+}
+
+.starters-list-item {
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d7d7d7;
+  img {
+    width: 116px;
+    height: 64px;
+    padding: 0 1rem;
+  }
+  .list-item-right-container {
+    padding: 0 1rem;
+    span {
+      display: block;
+    }
+  }
+  &:hover {
+    border: none;
+    border: 1px solid #2a63d8;
+    border-radius: 10px;
   }
 }
