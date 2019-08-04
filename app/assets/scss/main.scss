@@ -322,6 +322,9 @@ hr {
   justify-content: space-between;
   padding: 5px 1rem;
   border-bottom: 1px solid #d7d7d7;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .Collapsible__contentInner {
@@ -329,7 +332,11 @@ hr {
 }
 
 .confirm-booking-btn {
-  background-color: #2a63d8;
+  background-color: #FFFFFF !important;
+  color: #2a63d8 !important;
+  &:hover, &:active, &:focus{
+    color: #FFFFFF !important;
+  }
 }
 
 .starters-list-item {

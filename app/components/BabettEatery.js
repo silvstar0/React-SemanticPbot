@@ -66,20 +66,20 @@ export default class BabettEatery extends Component {
     this.setState({ isWebSite: !this.state.isWebSite });
   }
 
-  handleClickStarters () {
-    this.setState({ isOpenedStarters: !this.state.isOpenedStarters });
+  handleClickStarters (isOpenedStarters) {
+    this.setState({ isOpenedStarters });
   }
 
-  handleClickSoups () {
-    this.setState({ isOpenedSoups: !this.state.isOpenedSoups });
+  handleClickSoups (isOpenedSoups) {
+    this.setState({ isOpenedSoups });
   }
 
-  handleClickOceans () {
-    this.setState({ isOpenedOceans: !this.state.isOpenedOceans });
+  handleClickOceans (isOpenedOceans) {
+    this.setState({ isOpenedOceans });
   }
 
-  handleClickLand () {
-    this.setState({ isOpenedLand: !this.state.isOpenedLand });
+  handleClickLand (isOpenedLand) {
+    this.setState({ isOpenedLand });
   }
 
   render() {
@@ -110,16 +110,16 @@ export default class BabettEatery extends Component {
             </Slider>
           </div>
           <div className="out-slider">
-            <Collapsible trigger={<div className="collapsible-header"><span>Starters</span><Icon name={!this.state.isOpenedStarters ? 'chevron right' : 'chevron down'} onClick={() => this.handleClickStarters()} /></div>}>
+            <Collapsible trigger={<div className="collapsible-header"><span>Starters</span><Icon name={!this.state.isOpenedStarters ? 'chevron right' : 'chevron down'} /></div>} onOpen={() => this.handleClickStarters(true)} onClose={() => this.handleClickStarters(false)}>
               <a href="/starters">Go to details</a>
             </Collapsible>
-            <Collapsible trigger={<div className="collapsible-header"><span>Soups</span><Icon name={!this.state.isOpenedSoups ? 'chevron right' : 'chevron down'} onClick={() => this.handleClickSoups()} /></div>}>
+            <Collapsible trigger={<div className="collapsible-header"><span>Soups</span><Icon name={!this.state.isOpenedSoups ? 'chevron right' : 'chevron down'} /></div>} onOpen={() => this.handleClickSoups(true)} onClose={() => this.handleClickSoups(false)}>
               <a href="/starters">Go to details</a>
             </Collapsible>
-            <Collapsible trigger={<div className="collapsible-header"><span>From the Oceans</span><Icon name={!this.state.isOpenedOceans ? 'chevron right' : 'chevron down'} onClick={() => this.handleClickOceans()} /></div>}>
+            <Collapsible trigger={<div className="collapsible-header"><span>From the Oceans</span><Icon name={!this.state.isOpenedOceans ? 'chevron right' : 'chevron down'} /></div>} onOpen={() => this.handleClickOceans(true)} onClose={() => this.handleClickOceans(false)}>
               <a href="/starters">Go to details</a>
             </Collapsible>
-            <Collapsible trigger={<div className="collapsible-header"><span>From the Land</span><Icon name={!this.state.isOpenedLand ? 'chevron right' : 'chevron down'} onClick={() => this.handleClickLand()} /></div>}>
+            <Collapsible trigger={<div className="collapsible-header"><span>From the Land</span><Icon name={!this.state.isOpenedLand ? 'chevron right' : 'chevron down'} /></div>} onOpen={() => this.handleClickLand(true)} onClose={() => this.handleClickLand(false)}>
               <a href="/starters">Go to details</a>
             </Collapsible>
           </div>
